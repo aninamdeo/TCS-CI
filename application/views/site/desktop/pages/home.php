@@ -9,12 +9,11 @@
 <section class="front-news">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-7">
                 <div class="row">
                     <div class="col-sm-12" style="margin-bottom:20px">
                         <div class="blue-box">
-                            <h5><a href="<?= base_url('Interesting-News') ?>">देश-दुनिया की 10 सबसे रोचक खबरें <span
-                                        class="fa fa-angle-double-right pull-right"></span></a></h5>
+                            <h5><a href="<?= base_url('Interesting-News') ?>">देश-दुनिया की 10 सबसे रोचक खबरें <span class="fa fa-angle-double-right pull-right"></span></a></h5>
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
@@ -29,8 +28,8 @@
                                         } ?>
                                         <div class="item <?= ($m == 1) ? 'active' : '' ?>">
                                             <a href="<?= base_url($interes_link) ?>">
-                                            <div class="set_img">
-                                                <img src="<?= base_url($interes->image) ?>" alt="...">
+                                                <div class="set_img">
+                                                    <img src="<?= base_url($interes->image) ?>" alt="...">
                                                 </div>
                                                 <div class="carousel-caption">
                                                     <span class="web-color2"><?= $interes->title ?></span>
@@ -38,92 +37,93 @@
                                                 </div>
                                             </a>
                                         </div>
-                                        <?php $m++;
+                                    <?php $m++;
                                     } ?>
                                 </div>
 
                                 <!-- Controls -->
-                                <a class="left carousel-control" href="#carousel-example-generic" role="button"
-                                    data-slide="prev">
+                                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="right carousel-control" href="#carousel-example-generic" role="button"
-                                    data-slide="next">
+                                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <h4 class="front-news-heading">
-                            <?php if ($news->sub_category_link != "") {
-                                $news_link = $news->cat_name . '/' . $news->sub_category_link . '/news/' . $news->news_link;
-                            } elseif ($news->cat_name != "") {
-                                $news_link = $news->cat_name . '/news/' . $news->news_link;
-                            } else {
-                                $news_link = 'no-category/news/' . $news->news_link;
-                            }
-                            ?>
-                            <a href="<?= base_url($news_link) ?>" class="pull-left"><span
-                                    class="web-color"><?= $news->area_hindi ?> </span>
-                                <?= strip_tags($news->title_hindi) ?></a>
-                            <div class="clearfix"></div>
-                        </h4>
-                        <a href="<?= base_url($news_link) ?>"> <img src="<?= base_url($news->image) ?>"
-                                class="img-responsive img-rounded news-img" alt=""></a>
-                        <?php $n = 1;
-                        foreach ($news_data as $news1) {
-                            if ($news1->sub_category_link != "") {
-                                $news1_link = $news1->cat_name . '/' . $news1->sub_category_link . '/news/' . $news1->news_link;
-                            } elseif ($news1->cat_name != "") {
-                                $news1_link = $news1->cat_name . '/news/' . $news1->news_link;
-                            } else {
-                                $news1_link = 'no-category/news/' . $news1->news_link;
-                            }
-                            if ($n <= 5) { ?>
-                                <div class="box media">
-                                    <div class="media-left">
-                                        <img class="media-object img-rounded" src="<?= base_url($news1->image) ?>" alt="...">
-                                    </div>
-                                    <div class="media-body media-middle">
-                                        <h5>
-                                            <a href="<?= base_url($news1_link) ?>" class="pull-left"><span
-                                                    class="web-color"><?= $news1->area_hindi ?></span>
-                                                <?= strip_tags($news1->title_hindi) ?> </a>
-                                            <div class="clearfix"></div>
-                                        </h5>
-                                    </div>
+                    <div class="col-sm-12">
+                        <div class="common-box">
+                            <h2 class="home-sect-heading">EXCLUSIVE</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4 class="front-news-heading">
+                                        <?php if ($news->sub_category_link != "") {
+                                            $news_link = $news->cat_name . '/' . $news->sub_category_link . '/news/' . $news->news_link;
+                                        } elseif ($news->cat_name != "") {
+                                            $news_link = $news->cat_name . '/news/' . $news->news_link;
+                                        } else {
+                                            $news_link = 'no-category/news/' . $news->news_link;
+                                        }
+                                        ?>
+                                        <a href="<?= base_url($news_link) ?>" class="pull-left"><span class="web-color"><?= $news->area_hindi ?> </span>
+                                            <?= strip_tags($news->title_hindi) ?></a>
+                                        <div class="clearfix"></div>
+                                    </h4>
+                                    <a href="<?= base_url($news_link) ?>"> <img src="<?= base_url($news->image) ?>" class="img-responsive img-rounded news-img" alt=""></a>
+                                    <?php $n = 1;
+                                    foreach ($news_data as $news1) {
+                                        if ($news1->sub_category_link != "") {
+                                            $news1_link = $news1->cat_name . '/' . $news1->sub_category_link . '/news/' . $news1->news_link;
+                                        } elseif ($news1->cat_name != "") {
+                                            $news1_link = $news1->cat_name . '/news/' . $news1->news_link;
+                                        } else {
+                                            $news1_link = 'no-category/news/' . $news1->news_link;
+                                        }
+                                        if ($n <= 5) { ?>
+                                            <div class="box media">
+                                                <div class="media-left">
+                                                    <img class="media-object img-rounded" src="<?= base_url($news1->image) ?>" alt="...">
+                                                </div>
+                                                <div class="media-body media-middle">
+                                                    <h5>
+                                                        <a href="<?= base_url($news1_link) ?>" class="pull-left"><span class="web-color"><?= $news1->area_hindi ?></span>
+                                                            <?= strip_tags($news1->title_hindi) ?> </a>
+                                                        <div class="clearfix"></div>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        <?php } else {
+                                            if ($n == 6) {
+                                                echo '</div> <div class="col-sm-6">';
+                                            } ?>
+                                            <div class="box media">
+                                                <div class="media-left">
+                                                    <img class="media-object img-rounded" src="<?= base_url($news1->image) ?>" alt="...">
+                                                </div>
+                                                <div class="media-body media-middle">
+                                                    <h5>
+                                                        <a href="<?= base_url($news1_link) ?>" class="pull-left"><span class="web-color"><?= $news1->area_hindi ?> </span>
+                                                            <?= strip_tags($news1->title_hindi) ?></a>
+                                                        <div class="clearfix"></div>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                    <?php }
+                                        $n++;
+                                    } ?>
                                 </div>
-                            <?php } else {
-                                if ($n == 6) {
-                                    echo '</div> <div class="col-sm-6">';
-                                } ?>
-                                <div class="box media">
-                                    <div class="media-left">
-                                        <img class="media-object img-rounded" src="<?= base_url($news1->image) ?>" alt="...">
-                                    </div>
-                                    <div class="media-body media-middle">
-                                        <h5>
-                                            <a href="<?= base_url($news1_link) ?>" class="pull-left"><span
-                                                    class="web-color"><?= $news1->area_hindi ?> </span>
-                                                <?= strip_tags($news1->title_hindi) ?></a>
-                                            <div class="clearfix"></div>
-                                        </h5>
-                                    </div>
-                                </div>
-                            <?php }
-                            $n++;
-                        } ?>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
 
             </div>
-            <div class="col-sm-4">
-                <img src="<?= base_url('asset/site_images/Images_advs/5f420d27eab23026865639.jpg') ?>" class="img-responsive"/>
+            <div class="col-sm-3">
+                <a href="#">
+                    <img src="<?= base_url('asset/site_images/Images_advs/5f420d27eab23026865639.jpg') ?>" class="img-responsive w-100 home-ad-img" />
+                </a>
                 <!-- <div class="dark-blue-box">
                     <h4><a href="#">ई-पेपर</a></h4>
                     <select class="form-control">
@@ -190,6 +190,40 @@
                     </div>
                 </div> -->
             </div>
+            <div class="col-sm-2">
+                <div class="small-common-box">
+                    <div class="common-box-heading">
+                        <h3>POLL</h3>
+                    </div>
+                    <div class="common-box-content">
+                        <p>कोरोना महामारी: भारत सरकार का आर्थिक पैकेज ​आम जनता के लिए लाभदायक होगा ?</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                हां
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                नहीं
+                            </label>
+                        </div>
+                        <a href="#" class="web-btn-new">VOTE</a>
+                    </div>
+                </div>
+                <div class="small-common-box">
+                    <div class="common-box-heading">
+                        <h3>LINKS</h3>
+                    </div>
+                    <div class="common-box-content">
+                        <a href="https://" class="link-box">
+                            <img src="<?= base_url('asset/site_images/home-link-img.jpg') ?>" alt="">
+                            <span>mpinfo.org</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -212,8 +246,7 @@
                                         <i class="fa fa-play"></i>
                                     </div>
                                 </a>
-                                <h5><a href="<?= base_url('Videos/news/' . $video->link) ?>"><span
-                                            class="web-color"><?= $video->title ?></span> <?= $video->title_hindi ?></a>
+                                <h5><a href="<?= base_url('Videos/news/' . $video->link) ?>"><span class="web-color"><?= $video->title ?></span> <?= $video->title_hindi ?></a>
                                 </h5>
                             </div>
                         </div>
@@ -239,8 +272,7 @@
                                 <a href="<?= base_url('Photos/news/' . $gallery->link) ?>">
                                     <img src="<?= base_url($gallery->image) ?>" alt="" />
                                 </a>
-                                <h5><a href="<?= base_url('Photos/news/' . $gallery->link) ?>"><span
-                                            class="web-color"><?= $gallery->title ?></span> <?= $gallery->title_hindi ?></a>
+                                <h5><a href="<?= base_url('Photos/news/' . $gallery->link) ?>"><span class="web-color"><?= $gallery->title ?></span> <?= $gallery->title_hindi ?></a>
                                 </h5>
                             </div>
                         </div>
@@ -259,17 +291,15 @@
                     <h4>बॉलीवुड</h4>
                     <?php if ($bolly_sub_cat) { ?>
                         <div class="dropdown pull-right">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 MORE
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <?php foreach ($bolly_sub_cat as $bol_scat) {
                                     $category1 = $this->Query->select('*', 'category', ['id' => $bol_scat->cat_id], 'row');
-                                    ?>
-                                    <li><a
-                                            href="<?= base_url($category1->cat_name . '/' . $bol_scat->sub_category_link) ?>"><?= $bol_scat->sub_category_name ?></a>
+                                ?>
+                                    <li><a href="<?= base_url($category1->cat_name . '/' . $bol_scat->sub_category_link) ?>"><?= $bol_scat->sub_category_name ?></a>
                                     </li>
                                 <?php } ?>
                             </ul>
@@ -290,18 +320,16 @@
             } else {
                 $bolly_link = 'no-category/news/' . $bolly->news_link;
             }
-            ?>
+        ?>
             <div class="col-md-3 col-sm-6">
                 <div class="bollywood-box">
                     <h5>
-                        <a href="<?= base_url($bolly_link) ?>" class="pull-left"><span
-                                class="web-color"><?= $bolly->area_hindi ?></span>
+                        <a href="<?= base_url($bolly_link) ?>" class="pull-left"><span class="web-color"><?= $bolly->area_hindi ?></span>
                             <?= strip_tags($bolly->title_hindi) ?></a>
                         <!-- <a href="#" class="pull-right"><i class="fa fa-ellipsis-v"></i></a> -->
                         <div class="clearfix"></div>
                     </h5>
-                    <a href="<?= base_url($bolly_link) ?>"><img src="<?= base_url($bolly->image) ?>" class="img-responsive"
-                            alt=""></a>
+                    <a href="<?= base_url($bolly_link) ?>"><img src="<?= base_url($bolly->image) ?>" class="img-responsive" alt=""></a>
                 </div>
             </div>
         <?php } ?>
@@ -382,7 +410,7 @@ foreach ($categorys_data as $categorys) {
             $s_news_link = 'no-category/news/' . $s_news->news_link;
         }
         $s_all_news = $this->Query->join($select, 'news_details', $join_arr, ['news_details.status' => 'Enabled', 'news_details.cat_id' => $categorys->id, 'news_details.id !=' => $s_news->id], 'result', ['news_details.id' => 'desc'], '8');
-        ?>
+?>
         <section class="front-news <?= $clas ?>">
             <div class="container">
                 <div class="row">
@@ -391,14 +419,11 @@ foreach ($categorys_data as $categorys) {
                             <h4><?= $categorys->cat_name_hindi ?></h4>
                             <?php if ($sub_cat) { ?>
                                 <div class="dropdown pull-right">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> MORE <span
-                                            class="caret"></span>
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> MORE <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                         <?php foreach ($sub_cat as $scat) { ?>
-                                            <li><a
-                                                    href="<?= base_url($categorys->cat_name . '/' . $scat->sub_category_link) ?>"><?= $scat->sub_category_name ?></a>
+                                            <li><a href="<?= base_url($categorys->cat_name . '/' . $scat->sub_category_link) ?>"><?= $scat->sub_category_name ?></a>
                                             </li>
                                         <?php } ?>
                                     </ul>
@@ -412,14 +437,12 @@ foreach ($categorys_data as $categorys) {
                     </div>
                     <div class="col-sm-4">
                         <h4 class="front-news-heading">
-                            <a href="<?= base_url($s_news_link) ?>" class="pull-left"><span
-                                    class="web-color"><?= $s_news->area_hindi ?></span> <?= strip_tags($s_news->title_hindi) ?>
+                            <a href="<?= base_url($s_news_link) ?>" class="pull-left"><span class="web-color"><?= $s_news->area_hindi ?></span> <?= strip_tags($s_news->title_hindi) ?>
                             </a>
 
                             <div class="clearfix"></div>
                         </h4>
-                        <a href="<?= base_url($s_news_link) ?>"><img src="<?= base_url($s_news->image) ?>"
-                                class="img-responsive img-rounded news-img" alt=""></a>
+                        <a href="<?= base_url($s_news_link) ?>"><img src="<?= base_url($s_news->image) ?>" class="img-responsive img-rounded news-img" alt=""></a>
                     </div>
                     <div class="col-sm-4">
                         <?php $k = 1;
@@ -441,8 +464,7 @@ foreach ($categorys_data as $categorys) {
                                         </div>
                                         <div class="media-body media-middle">
                                             <h5>
-                                                <a href="<?= base_url($all_news_link) ?>" class="pull-left"><span
-                                                        class="web-color"><?= $all_news->area_hindi ?> </span>
+                                                <a href="<?= base_url($all_news_link) ?>" class="pull-left"><span class="web-color"><?= $all_news->area_hindi ?> </span>
                                                     <?= strip_tags($all_news->title_hindi) ?> </a>
                                                 <div class="clearfix"></div>
                                             </h5>
@@ -460,14 +482,13 @@ foreach ($categorys_data as $categorys) {
                                         </div>
                                         <div class="media-body media-middle">
                                             <h5>
-                                                <a href="<?= base_url($all_news_link) ?>" class="pull-left"><span
-                                                        class="web-color"><?= $all_news->area_hindi ?></span>
+                                                <a href="<?= base_url($all_news_link) ?>" class="pull-left"><span class="web-color"><?= $all_news->area_hindi ?></span>
                                                     <?= strip_tags($all_news->title_hindi) ?> </a>
                                                 <div class="clearfix"></div>
                                             </h5>
                                         </div>
                                     </div>
-                                <?php }
+                        <?php }
                                 $k++;
                             }
                         } ?>
@@ -475,6 +496,6 @@ foreach ($categorys_data as $categorys) {
                 </div>
             </div>
         </section>
-    <?php }
+<?php }
     $v++;
 } ?>
